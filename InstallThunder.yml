@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+
+  - name: Download Notepad to specified path
+    ansible.windows.win_copy:
+      src: Thunder.msi
+      dest: C:\temp
+
+
+  - name: Install Notepad  and use a file version for the installation check
+    ansible.windows.win_package:
+      path: C:\temp\Thunder.msi
+      state: present

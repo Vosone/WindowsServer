@@ -2,14 +2,15 @@
 - hosts: all
   tasks:
 
-  - name: Copy a single file
-    ansible.windows.win_copy:
-      src: srv/7z2201-x64.msi
-      dest: C:\Temp\7z2201-x64.msi
+  - name: Download earthrise.jpg to specified path
+    win_get_url:
+      url: https://www.7-zip.org/a/7z2201-x64.exe
+      dest: C:\temp
 
-  - name: Install 7zip and use a file version for the installation check
+  - name: Install 7zip from a network share with specific credentials
     ansible.windows.win_package:
-      path: C:\temp\7z2201-x64.msi
-      creates_path: C:\Program Files\7-Zip\7z2201-x64.msi
-      creates_version: 22.01
-    state: present
+      path: C:\temp\7z2201-x64.exe
+      product_id: 7-Zip
+      arguments: /S /D="C:\Program Files\7-Zipi"
+      state: present
+

@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+
+
+  - name: Install Notepad  and use a file version for the installation check
+    ansible.windows.win_package:
+      product_id: Thunderbird
+      arguments: 'NSTALL_DIRECTORY_PATH=C:/installs/'
+      state:  absent

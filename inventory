@@ -1,0 +1,9 @@
+[win]
+10.0.0.125
+
+[win:vars]
+ansible_connection=winrm
+ansible_winrm_transport=credssp
+ansible_user=malon
+ansible_password=Sauber88$
+ansible_winrm_server_cert_validation=ignore

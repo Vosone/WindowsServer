@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+
+  - name: Copy a single file
+    ansible.windows.win_copy:
+      src: srv/7z2201-x64.msi
+      dest: C:\Temp\7z2201-x64.msi
+
+  - name: Install 7zip and use a file version for the installation check
+    ansible.windows.win_package:
+      path: C:\temp\7z2201-x64.msi
+    state: present

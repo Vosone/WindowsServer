@@ -4,3 +4,7 @@
 
   - name: Get whoami information
     ansible.windows.win_whoami:
+
+  - name: Get info for all installed features
+    community.windows.win_feature_info:
+    register: feature_info

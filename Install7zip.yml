@@ -10,4 +10,6 @@
   - name: Install 7zip and use a file version for the installation check
     ansible.windows.win_package:
       path: C:\temp\7z2201-x64.msi
+      creates_path: C:\Program Files\7-Zip\7z2201-x64.msi
+      creates_version: 22.01
     state: present

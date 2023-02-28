@@ -2,13 +2,13 @@
 - hosts: all
   tasks:
 
-  - name: Copy Thunderbird msi local to Remote Host
+  - name: Copy Edge msi local to Remote Host
     ansible.windows.win_copy:
       src: MicrosoftEdgeEnterpriseX64.msi
       dest: C:\temp
 
 
-  - name: Install Thunderbird 
+  - name: Install Edge 
     ansible.windows.win_powershell:
       script: |
         cmd /c start /wait msiexec /i C:\temp\MicrosoftEdgeEnterpriseX64.msi /qn /norestart

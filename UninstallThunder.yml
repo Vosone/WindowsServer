@@ -3,8 +3,5 @@
   tasks:
 
 
-  - name: Install Notepad  and use a file version for the installation check
-    ansible.windows.win_package:
-      product_id: Thunderbird
-      arguments: 'NSTALL_DIRECTORY_PATH=C:/installs/'
-      state:  absent
+  - name: Execute a command in the remote shell, stdout goes to the specified file on the remote
+    ansible.windows.win_shell: C:\temp\remthunder.ps1 >> C:\somelog.txt

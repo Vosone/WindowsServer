@@ -21,8 +21,15 @@
       src: ConfigurationFile.ini
       dest: C:\install\sql\SQLEXPR_2019
 
-  - name: Install SQL on remote host
-    ansible.windows.win_command:
-      cmd: C:\install\SQL\SQLEXPR_2019\Setup.exe /ACtion=install /Q /IAcceptSQLServerLicenseTerms=true /ConfigurationFile=ConfigurationFile.ini
-
+  - name: Install 7zip from a network share with specific credentials
+    ansible.windows.win_package:
+      path: C:\install\SQL\SQLEXPR_2019\Setup.exe
+      arguments: /ACtion=install /Q /IAcceptSQLServerLicenseTerms=true /INSTANCENAME=SQLEXPRESS /ConfigurationFile=C:\install\sql\myconf.ini
+      state: present
+    become: yes
+    become_method: runas
+    become_user: malon
+    become_flags: logon_type=interactive logon_flags=with_profile
+    vars:
+      become_password: Sauber88$
 

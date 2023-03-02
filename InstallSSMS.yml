@@ -1,0 +1,28 @@
+---
+- hosts: all
+  tasks:
+
+  - name: Create directory structure
+    ansible.windows.win_file:
+      path: C:\install
+      state: directory
+
+  - name: Copy SQL Install file local to Remote Host
+    ansible.windows.win_copy:
+      src: SQLEXPR_x64_ENU.exe
+      dest: C:\install
+        
+  - name: Prepare SQL Setup file on remote host
+    ansible.windows.win_command:
+      cmd: C:\install\SQLEXPR_x64_ENU.exe /q /x:C:\install\sql\SQLEXPR_2019
+
+  - name: Copy SQL config file local to Remote Host
+    ansible.windows.win_copy:
+      src: ConfigurationFile.ini
+      dest: C:\install\sql\SQLEXPR_2019
+
+  - name: Install SQL on remote host
+    ansible.windows.win_command:
+      cmd: C:\install\SQL\SQLEXPR_2019\Setup.exe /ACtion=install /Q /IAcceptSQLServerLicenseTerms=true /ConfigurationFile=ConfigurationFile.ini
+
+

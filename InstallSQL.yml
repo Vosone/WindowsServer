@@ -16,15 +16,15 @@
     ansible.windows.win_command:
       cmd: C:\install\SQLEXPR_x64_ENU.exe /q /x:C:\install\sql\SQLEXPR_2019
 
-        #  - name: Copy SQL config file local to Remote Host
-        #    ansible.windows.win_copy:
-        #      src: ConfigurationFile.ini
-        #      dest: C:\install\sql\SQLEXPR_2019
+  - name: Copy SQL config file local to Remote Host
+    ansible.windows.win_copy:
+      src: mysqlconf.ini
+      dest: C:\install\sql\SQLEXPR_2019\mysqlconf.ini
 
   - name: Install SQL Express on Remote Host
     ansible.windows.win_package:
       path: C:\install\SQL\SQLEXPR_2019\Setup.exe
-      arguments: /Action=install /Q /IAcceptSQLServerLicenseTerms=true /INSTANCENAME=SQLEXPRESS 
+      arguments: /Action=install /Q /IAcceptSQLServerLicenseTerms=true /INSTANCENAME=SQLEXPRESS /CONFIGURATIONFILE=C:\Install\sql\SQLEXPR_2019\mysqlconf.ini
       state: present
     become: yes
     become_method: runas

@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+
+  - name: Find files in path
+    ansible.windows.win_find:
+      paths: C:\Temp
+

@@ -8,7 +8,7 @@
       dest: C:\temp
 
 
-  - name: Install Edge 
+  - name: Install Edge
     ansible.windows.win_powershell:
       script: |
         cmd /c start /wait msiexec /i C:\temp\MicrosoftEdgeEnterpriseX64.msi /qn /norestart

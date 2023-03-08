@@ -1,0 +1,15 @@
+---
+- hosts: all
+  tasks:
+
+
+  - name: get 32bit software
+    ansible.windows.win_powershell:
+        script: |
+          Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion, Publisher, InstallDate
+
+  - name: Get 64bit software
+    ansible.windows.win_powershell:
+        script: |
+          Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion, Publisher, InstallDate
+

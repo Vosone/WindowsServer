@@ -2,13 +2,18 @@
 - hosts: all
   tasks:
 
+  - name: Create directory structure
+    ansible.windows.win_file:
+      path: C:\install\Edge
+      state: directory
+
   - name: Copy Edge msi local to Remote Host
     ansible.windows.win_copy:
       src: MicrosoftEdgeEnterpriseX64.msi
-      dest: C:\temp
+      dest: C:\install\Edge
 
 
   - name: Install Edge
     ansible.windows.win_powershell:
       script: |
-        cmd /c start /wait msiexec /i C:\temp\MicrosoftEdgeEnterpriseX64.msi /qn /norestart
+        cmd /c start /wait msiexec /i C:\install\Edge\MicrosoftEdgeEnterpriseX64.msi /qn /norestart

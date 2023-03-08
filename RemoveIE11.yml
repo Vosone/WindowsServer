@@ -2,7 +2,7 @@
 - hosts: all
   tasks:
 
-  - name: Install Thunderbird 
+  - name: Remove IE11 
     ansible.windows.win_powershell:
       script: |
         Disable-WindowsOptionalFeature -FeatureName Internet-Explorer-Optional-amd64 –Online -NoRestart

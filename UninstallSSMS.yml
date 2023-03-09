@@ -12,7 +12,7 @@
       src: SSMS-Setup-ENU.exe
       dest: C:\install
 
-  - name: Remove SSMS on remote host
+  - name: Uninstall SSMS on remote host
     ansible.windows.win_command:
       cmd: C:\install\SSMS-Setup-ENU.exe /uninstall /quiet /norestart
 

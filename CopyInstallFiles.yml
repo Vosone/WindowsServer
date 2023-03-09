@@ -1,0 +1,24 @@
+---
+- hosts: all
+  tasks:
+
+  - name: Create directory structure
+    ansible.windows.win_file:
+      path: C:\shares\company
+      state: directory
+
+
+  - name: Add public company share
+    ansible.windows.win_share:
+      name: company
+      description: top secret share
+      path: C:\shares\company
+      list: yes
+      full: Administrators
+      read: Administrators
+
+  - name: Copy a single file
+    ansible.windows.win_copy:
+      src: files/
+      dest: C:\shares\company
+

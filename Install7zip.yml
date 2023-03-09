@@ -1,6 +1,11 @@
 ---
 - hosts: all
   tasks:
+  
+  - name: Create directory structure
+    ansible.windows.win_file:
+      path: C:\install\
+      state: directory
 
   - name: Download 7zip to specified path
     win_get_url:

@@ -1,0 +1,58 @@
+2023-03-09 14:08:13Z Reboot requirement check: False
+2023-03-09 14:08:13Z Creating Windows Update session...
+2023-03-09 14:08:13Z Create Windows Update searcher...
+2023-03-09 14:08:13Z Setting the Windows Update Agent source catalog...
+2023-03-09 14:08:13Z Search source set to 'default' (ServerSelection = 0)
+2023-03-09 14:08:13Z Searching for updates to install with query 'IsInstalled = 0'
+2023-03-09 14:08:22Z Found 1 updates
+2023-03-09 14:08:22Z Filtering found updated based on input search criteria
+2023-03-09 14:08:22Z Process filtering rules for
+{
+    "id":  "75de5e79-8eb5-40d9-89b3-e0187346b0b0",
+    "title":  "Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.383.1345.0)",
+    "description":  "Install this update to revise the files that are used to detect viruses, spyware, and other potentially unwanted software. Once you have installed this item, it cannot be removed.",
+    "kb":  [
+               "KB2267602"
+           ],
+    "type":  "Software",
+    "deployment_action":  "Installation",
+    "auto_select_on_websites":  true,
+    "browse_only":  false,
+    "revision_number":  200,
+    "categories":  [
+                       "Definition Updates",
+                       "Microsoft Defender Antivirus"
+                   ],
+    "is_installed":  false,
+    "is_hidden":  false,
+    "is_present":  true,
+    "reboot_required":  false,
+    "impact":  "Minor",
+    "reboot_behaviour":  "NeverReboots",
+    "is_beta":  false,
+    "is_downloaded":  false,
+    "is_mandatory":  false,
+    "is_uninstallable":  false,
+    "auto_selection":  "LetWindowsUpdateDecide",
+    "auto_download":  "LetWindowsUpdateDecide"
+}
+2023-03-09 14:08:22Z Skipping update 75de5e79-8eb5-40d9-89b3-e0187346b0b0 - Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.383.1345.0) due to category_names
+2023-03-09 14:08:22Z Search mode: exiting...
+2023-03-09 14:11:55Z Reboot requirement check: False
+2023-03-09 14:11:55Z Creating Windows Update session...
+2023-03-09 14:11:55Z Create Windows Update searcher...
+2023-03-09 14:11:55Z Setting the Windows Update Agent source catalog...
+2023-03-09 14:11:55Z Search source set to 'default' (ServerSelection = 0)
+2023-03-09 14:11:55Z Searching for updates to install with query 'IsInstalled = 0'
+2023-03-09 14:12:00Z Found 0 updates
+2023-03-09 14:12:00Z Filtering found updated based on input search criteria
+2023-03-09 14:12:00Z Search mode: exiting...
+2023-03-09 14:14:01Z Reboot requirement check: False
+2023-03-09 14:14:01Z Creating Windows Update session...
+2023-03-09 14:14:01Z Create Windows Update searcher...
+2023-03-09 14:14:01Z Setting the Windows Update Agent source catalog...
+2023-03-09 14:14:01Z Search source set to 'default' (ServerSelection = 0)
+2023-03-09 14:14:01Z Searching for updates to install with query 'IsInstalled = 0'
+2023-03-09 14:14:06Z Found 0 updates
+2023-03-09 14:14:06Z Filtering found updated based on input search criteria
+2023-03-09 14:14:06Z Search mode: exiting...

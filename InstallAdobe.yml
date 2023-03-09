@@ -5,11 +5,11 @@
   - name: Copy Thunderbird msi local to Remote Host
     ansible.windows.win_copy:
       src: AcroRdrDC2200320322_en_US.exe
-      dest: C:\temp
+      dest: C:\install
 
 
   - name: Install Thunderbird 
     ansible.windows.win_package:
-      path: C:\temp\AcroRdrDC2200320322_en_US.exe
+      path: C:\install\AcroRdrDC2200320322_en_US.exe
       arguments: /S /D="C:\Program Files\Adobe"
       state: present

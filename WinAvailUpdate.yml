@@ -6,10 +6,11 @@
     ansible.windows.win_updates:
       category_names: '*'
       state: searched
-      log_path: C:\install\ansible_searchwu.txt
+      log_path: C:\install\ansible_wu.txt
 
   - name: Store file into /tmp/fetched/host.example.com/tmp/somefile
     ansible.builtin.fetch:
-      src: C:\install\ansible_searchwu.txt
+      src: C:\install\ansible_wu.txt
       dest: /home/malon/WindowsServer/tmp/fetched
+
 

@@ -13,3 +13,5 @@
       path: C:\install\AcroRdrDC2200320322_en_US.exe
       arguments: /S /D="C:\Program Files\Adobe"
       state: present
+      log_path: C:\install\ansible_adobeinstall.log
+

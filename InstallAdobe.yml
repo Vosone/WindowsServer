@@ -4,13 +4,12 @@
 
   - name: Copy Adobe install file local to Remote Host
     ansible.windows.win_copy:
-      src: AcroRdrDC2200320322_en_US.exe
+      src: /var/lib/awx/project/files/AcroRdrDC2200320322_en_US.exe
       dest: C:\install
-
 
   - name: Install Adobe Reader 
     ansible.windows.win_package:
-      path: C:\install\AcroRdrDC2200320322_en_US.exe
+      path: Z:\AcroRdrDC2200320322_en_US.exe
       arguments: /S /D="C:\Program Files\Adobe"
       state: present
       log_path: C:\install\ansible_adobeinstall.log

@@ -2,6 +2,8 @@
 10.0.0.125
 
 [win:vars]
+ansible_user=malon
+ansible_password=Sauber88$
 ansible_connection=winrm
 ansible_winrm_cert_pem=cert/cert.pem
 ansible_winrm_cert_key_pem=cert/cert_key.pem

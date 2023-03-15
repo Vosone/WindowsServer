@@ -1,0 +1,35 @@
+---
+- hosts: all
+
+  vars:
+    my_secret: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          62626431613135666230646461373532376134353136353261333838353363363732306331346238
+          6138363436366331326232383732353133306364313762640a643439616536643863636238643763
+          65636530323432613732363461626431383962316165626535343238383133396134656466353233
+          6261626166383662650a663439363838353861666233326130663838363563396331636566393439
+          6232
+
+
+ 
+
+
+  tasks:
+  - name: print the secure variable
+    debug:
+      var: my_secret
+     
+
+
+  - name: copy a file from a fileshare with custom credentials
+    ansible.windows.win_copy:
+      src: \\10.0.0.126\company\Thunder.msi
+      dest: C:\install
+      remote_src: true
+    vars:
+      ansible_become: yes
+      ansible_become_method: runas
+      ansible_become_user: malon
+      ansible_become_password: "{{ my_secret }}"
+      ansible_become_flags: logon_type=new_credentials logon_flags=netcredentials_only
+

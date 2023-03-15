@@ -7,11 +7,11 @@
       path: C:\install\Edge
       state: directory
 
-  - name: Copy Edge msi local to Remote Host
+  - name: copy Edge install file from share to remote host
     ansible.windows.win_copy:
-      src: MicrosoftEdgeEnterpriseX64.msi
-      dest: C:\install\Edge
-
+      src: \\10.0.0.126\company\MicrosoftEdgeEnterpriseX64.msi
+      dest: C:\install
+      remote_src: true
 
   - name: Install Edge
     ansible.windows.win_powershell:

@@ -7,11 +7,12 @@
       path: C:\install\sql
       state: directory
 
-  - name: Copy SQL Install file local to Remote Host
+  - name: copy adobe install filel from share to remote host
     ansible.windows.win_copy:
-      src: SQLEXPR_x64_ENU.exe
+      src: \\10.0.0.126\company\SQLEXPR_x64_ENU.exe
       dest: C:\install
-        
+      remote_src: true
+
   - name: Prepare SQL Setup file on remote host
     ansible.windows.win_command:
       cmd: C:\install\SQLEXPR_x64_ENU.exe /q /x:C:\install\sql\SQLEXPR_2019

@@ -30,20 +30,4 @@
       path: C:\install\7z2201-x64.exe
       product_id: 7-Zip
       arguments: /S /D="C:\Program Files\7-Zipi"
-      state: present
 
-  - name: Copy Thunderbird msi local to Remote Host
-    ansible.windows.win_copy:
-      src: Thunder.msi
-      dest: C:\install
-
-
-  - name: Install Thunderbird
-    ansible.windows.win_package:
-      path: C:\install\Thunder.msi
-      state: present
-
-  - name: Remove directory structure
-    ansible.windows.win_file:
-      path: C:\install
-      state: absent
